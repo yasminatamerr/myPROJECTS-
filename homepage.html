@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Homepage</title>
+    <style>
+        body {
+          background-image: url('https://datarespons.com/wp-content/uploads/Digital-banking-scaled.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 970px;
+
+        }
+        .top-bar {
+      background-color: hsl(246, 80%, 8%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: hwb(25 3% 13%);
+      font-family: Cursive;
+    }
+
+    .top-bar .login-info {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .top-bar .login-icon {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .top-bar .buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+      align-items: center;
+    }
+
+    .top-bar .date {
+      font-weight: bold;
+      color: #f8f2f2;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      position: absolute;
+      left: 47%;
+      transform: translateX(-50%);
+    }
+
+    .top-bar .buttons button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-bar .buttons button:hover {
+      background-color: #45a049;
+    }
+
+     
+.sidebar {
+   background-color:  hsl(246, 80%, 8%);
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 999;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #f6eeee;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #0e2c4c;
+}
+
+.sidebar .logo {
+  font-size: 20px;
+  color: #f6eeee;
+  margin-bottom: 20px;
+}
+
+.sidebar .user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .user-info .user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #cd7a7a;
+  margin-bottom: 10px;
+}
+
+.sidebar .user-info .user-name {
+  color: #f6eeee;
+  font-size: 16px;
+}
+
+.sidebar .menu-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+   
+}
+
+.sidebar .menu-items .menu-icon {
+  font-size: 18px;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bank_of_England_logo.svg/1200px-Bank_of_England_logo.svg.png" alt="Bank Icon" height="30" width="30">
+          <span>Central Bank Of London</span>
+        </div>
+        <div class="buttons">
+            <div class="login-info">
+              <span class="login-icon">👤</span>
+              <span>Yasmina Tamer</span>
+            </div>
+            <button onclick="window.location.href = 'showmyprofile.html'">My Profile</button>
+             
+           
+            <button onclick="window.location.href = 'inde.html'">About us</button>
+            <button onclick="window.location.href = 'indx.html'">Careers</button>
+            <button onclick="window.location.href = 'index.html'">Logout</button>
+          </div>
+          <div class="date">
+            <script>
+              var today = new Date(); //get day enharda always updated 
+              var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+              document.write(date);
+            </script>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="sidebar">
+            <a href="apply for credit card.html">Apply for a Credit Card</a>
+            <a href="apply for a loan.html">Apply for a Loan</a>
+            <a href="viewtransactions.html">View Bank Account Transactions</a>
+            <a href="creditcardandredeempoints.html">View Credit Card Transactions</a>
+            <a href="creditcardandredeempoints.html">View Credit Card Points and Redeem</a>
+            <a href="pay credit card bills.html">Pay Credit Card Bills</a>
+            <a href="transfer money to other banks.html">Transfer Money to Other Bank Accounts</a>
+            <a href="reminders.html">Show Reminders to Pay</a>
+            <a href="payments.html"> Payments</a>
+            <a href="notifications.html">notifications</a>
+            <a href="report.html">Reports</a>

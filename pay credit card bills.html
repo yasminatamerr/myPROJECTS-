@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://datarespons.com/wp-content/uploads/Digital-banking-scaled.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1000px;
+            flex: 100%;
+        }
+        .top-bar {
+      background-color: hsl(246, 80%, 8%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: hwb(25 3% 13%);
+      font-family: Cursive;
+    }
+
+    .top-bar .login-info {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .top-bar .login-icon {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .top-bar .buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+      align-items: center;
+    }
+
+    .top-bar .date {
+      font-weight: bold;
+      color: #f8f2f2;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      position: absolute;
+      left: 47%;
+      transform: translateX(-50%);
+    }
+
+    .top-bar .buttons button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-bar .buttons button:hover {
+      background-color: #45a049;
+    }
+
+     
+
+     
+        .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: rgb(227, 225, 238);
+    background-color: #0b0c3f;
+}
+
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container #paymentOptions, .container #partialPaymentOptions {
+    margin-top: 20px;
+}
+
+.container #paymentOptions h3, .container #partialPaymentOptions h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.container button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #061e39;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bank_of_England_logo.svg/1200px-Bank_of_England_logo.svg.png" alt="Bank Icon" height="30" width="30">
+          <span>Central Bank Of London</span>
+        </div>
+        <div class="buttons">
+            <div class="login-info">
+              <span class="login-icon">👤</span>
+              <span>Yasmina Tamer</span>
+            </div>
+            <button onclick="window.location.href = 'showmyprofile.html'">My Profile</button>
+            <button onclick="window.location.href = 'homepage.html'">back</button>
+           
+            <button onclick="window.location.href = 'index.html'">About us</button>
+             
+            <button onclick="window.location.href = 'index.html'">Logout</button>
+          </div>
+          <div class="date">
+            <script>
+              var today = new Date();
+              var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+              document.write(date);
+            </script>
+          </div>
+        
+    </div>
+    <div class="container">
+        <h2>Current Balance: <span id="currentBalance">$500.00</span></h2>
+        <h2>Bills to Pay: <span id="billsToPay">$50.00</span></h2>
+    
+        <div id="paymentOptions">
+            <h3>How would you like to pay?</h3>
+            <button onclick="payFully()">Pay Fully</button>
+            <button onclick="payPartially()">Pay Partially</button>
+        </div>
+    
+        <div id="partialPaymentOptions" style="display: none;">
+            <h3>Select a partial payment option:</h3>
+            <button onclick="installmentPayment(10)">Pay $10.00 now and install the remaining within 1-3 months</button>
+            <button onclick="installmentPayment(20)">Pay $20.00 now and install the remaining within 1 month</button>
+        </div>
+    </div>
+    
+    <script>
+        function payFully() {
+           
+            document.getElementById("currentBalance").textContent = "$450.00";
+    
+            
+            document.getElementById("billsToPay").textContent = "$0.00";
+    
+            
+            alert("Payment successful!");
+        }
+    
+        function payPartially() {
+             
+            document.getElementById("paymentOptions").style.display = "none";
+            document.getElementById("partialPaymentOptions").style.display = "block";
+        }
+    
+        function installmentPayment(amount) {
+            
+            var currentBalance = parseFloat(document.getElementById("currentBalance").textContent.slice(1));
+            var newBalance = currentBalance - amount;
+            document.getElementById("currentBalance").textContent = "$" + newBalance.toFixed(2);
+    
+        
+            var billsToPay = parseFloat(document.getElementById("billsToPay").textContent.slice(1));
+            var newBillsToPay = billsToPay - (50 - amount);
+            document.getElementById("billsToPay").textContent = "$" + newBillsToPay.toFixed(2);
+    
+             
+            document.getElementById("partialPaymentOptions").style.display = "none";
+    
+            
+            alert("Payment successful!");
+        }
+    </script>
+    

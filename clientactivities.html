@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Client Activities</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: hsl(246, 80%, 8%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: hwb(25 3% 13%);
+      font-family: Cursive;
+    }
+
+    .top-bar .login-info {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .top-bar .login-icon {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .top-bar .buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+      align-items: center;
+    }
+
+    .top-bar .date {
+      font-weight: bold;
+      color: #f8f2f2;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      position: absolute;
+      left: 65%;
+      transform: translateX(-50%);
+    }
+
+    .top-bar .buttons button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-bar .buttons button:hover {
+      background-color: #45a049;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .client-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .client-list li {
+      background-color: hsl(238, 20%, 75%);
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bank_of_England_logo.svg/1200px-Bank_of_England_logo.svg.png" alt="Bank Icon" height="30" width="30">
+      <span>Central Bank Of London</span>
+    </div>
+    <div class="buttons">
+        <div class="login-info">
+          <span class="login-icon">👤</span>
+          <span>Nariman ismail</span>
+        </div>
+         
+        <button onclick="window.location.href = 'Bindex.html'">back</button>
+        <button onclick="window.location.href = 'index.html'">Logout</button>
+      </div>
+      <div class="date">
+        <script>
+          var today = new Date();
+          var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+          document.write(date);
+        </script>
+      </div>
+    </div>
+  </div>
+
+  <h1>Client Activities</h1>
+  <ul class="client-list" id="clientList"></ul>
+
+  <script>
+    
+    function generateClientActivities() {
+      const activities = [
+        "Payment",
+        "Transfer",
+        "Deposit",
+        "Withdrawal",
+        "Balance Inquiry",
+        "Account Update",
+        "Card Activation",
+        "Loan Application",
+        "Transaction Dispute",
+        "Statement Request"
+      ];
+
+      const clientActivities = [];
+      for (let i = 0; i < 5; i++) {
+        const randomIndex = Math.floor(Math.random() * activities.length);
+        const activity = activities[randomIndex];
+        clientActivities.push(activity);
+      }
+
+      return clientActivities;
+    }
+
+ 
+    function generateRandomName() {
+      const names = ["John Doe", "Jane Smith", "Michael Johnson", "Emily Davis", "Robert Brown", "Sophia Wilson", "William Taylor", "Olivia Martinez", "David Anderson", "Emma Clark"];
+      const randomIndex = Math.floor(Math.random() * names.length);
+      return names[randomIndex];
+    }
+ 
+    function displayClientActivities() {
+      const clientList = document.getElementById("clientList");
+
+      for (let i = 0; i < 10; i++) {
+        const clientName = generateRandomName();
+        const clientActivities = generateClientActivities();
+
+        const listItem = document.createElement("li");
+        listItem.innerHTML = `<strong>${clientName}</strong>: ${clientActivities.join(", ")}`;
+
+        clientList.appendChild(listItem);
+      }
+    }
+
+    displayClientActivities();
+  </script>
+</body>
+</html>

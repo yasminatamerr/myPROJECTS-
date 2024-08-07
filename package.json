@@ -1,0 +1,22 @@
+{
+  "name": "networksproject",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "~1.4.4",
+    "cookie-session": "^2.0.0",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "http-errors": "~1.6.3",
+    "memorystore": "^1.6.7",
+    "mongoose": "^6.7.2",
+    "morgan": "~1.9.1",
+    "path": "^0.12.7"
+  }
+}

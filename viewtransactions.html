@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view transactions</title>
+    <style>
+        body {
+            
+            background-image: url('https://datarespons.com/wp-content/uploads/Digital-banking-scaled.jpg'); /* Replace with your image URL */
+            display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex: 100%;
+        }
+
+        .top-bar {
+      background-color: hsl(246, 80%, 8%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      
+    }
+
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: hwb(25 3% 13%);
+      font-family: Cursive;
+    }
+
+    .top-bar .login-info {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .top-bar .login-icon {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .top-bar .buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+      align-items: center;
+    }
+
+    .top-bar .date {
+      font-weight: bold;
+      color: #f8f2f2;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      position: absolute;
+      left: 47%;
+      transform: translateX(-50%);
+    }
+
+    .top-bar .buttons button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-bar .buttons button:hover {
+      background-color: #45a049;
+    }
+
+
+        .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  
+  grid-gap: 150px;  
+  justify-content: center;
+  row-gap: 15px;
+  column-gap: 300px;
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400;
+    position: fixed;
+    
+   
+}
+
+.component {
+  background-color: #9dc1e0;
+  padding: 20px;
+  margin-top: 200px;
+  width: 400px;  
+  height: 380px; 
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: solid;
+    font-size: smaller;
+  text-justify: distribute;
+  flex-wrap: wrap;
+
+
+}
+
+  
+ 
+.highlight {
+  background-color: #ffec99;
+  padding: 2px 5px;
+  border-radius: 3px;
+   
+  word-wrap: break-word;  
+  max-width: 150px;  
+
+
+}
+.info {
+  background-color: #f0f0f0;
+  padding: 10px;
+   
+  white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;
+  margin-top: 20px;
+  
+  
+  
+ 
+  
+   
+}
+
+.box {
+  margin-right: 10px;  
+  width: 120px;  
+  overflow-wrap: break-word;
+}
+
+.highlight {
+  margin-left: 10px;  
+  padding: 5px 10px;
+  word-break: break-all;
+}
+
+
+
+ </style>
+ body>
+ <div class="top-bar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bank_of_England_logo.svg/1200px-Bank_of_England_logo.svg.png" alt="Bank Icon" height="30" width="30">
+      <span>Central Bank Of London</span>
+    </div>
+    <div class="buttons">
+        <div class="login-info">
+          <span class="login-icon">👤</span>
+          <span>Yasmina Tamer</span>
+        </div>
+        <button onclick="window.location.href = 'showmyprofile.html'">My Profile</button>
+        <button onclick="window.location.href = 'homepage.html'">back</button>
+       
+        <button onclick="window.location.href = 'index.html'">About us</button>
+        
+        <button onclick="window.location.href = 'index.html'">Logout</button>
+      </div>
+      <div class="date">
+        <script>
+          var today = new Date();
+          var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+          document.write(date);
+        </script>
+      </div>
+    </div>
+
+
+ <div class="container">
+    <div class="component" id="component1">
+    
+
+        <div class="info">
+            <div><span class="box">Amount:</span> <span class="highlight">$700.00</span></div><br>
+            <div><span class="box">Currency:</span> <span class="highlight">USD</span></div> <br>
+            <div><span class="box">Type:</span> <span class="highlight">withdrawal</span></div><br>
+            <div><span class="box">Status:</span> completed<span class="highlight">completed</span></div><br>
+            <div><span class="box">Date occurred:</span>  <span class="highlight">2023-9-12</span></div><br>
+            <div><span class="box">Associated fees:</span> <span class="highlight">$2.00</span></div><br>
+            <div><span class="box">Region:</span> <span class="highlight">Internal</span></div><br>
+            <div><span class="box">In future dated:</span> <span class="highlight">No</span></div><br>
+            <div><span class="box">Sender Account:</span> <span class="highlight">876654238764</span></div><br>
+            <div><span class="box">Receiver Account:</span> <span class="highlight">8766532143232</span></div><br>
+            <div><span class="box">Method:</span> <span class="highlight">3rd-party-App</span></div><br>
+          </div>
+
+
+    </div>
+    <div class="component" id="component2">
+     
+
+        <div class="info">
+            <div><span class="box">Amount:</span> <span class="highlight">$500.00</span></div><br>
+            <div><span class="box">Currency:</span> <span class="highlight">EGP</span></div> <br>
+            <div><span class="box">Type:</span> <span class="highlight">withdrawal</span></div><br>
+            <div><span class="box">Status:</span> completed<span class="highlight">completed</span></div><br>
+            <div><span class="box">Date occurred:</span>  <span class="highlight">2023-9-12</span></div><br>
+            <div><span class="box">Associated fees:</span> <span class="highlight">$2.00</span></div><br>
+            <div><span class="box">Region:</span> <span class="highlight">Domestic</span></div><br>
+            <div><span class="box">In future dated:</span> <span class="highlight">YES</span></div><br>
+            <div><span class="box">Sender Account:</span> <span class="highlight">809765446764</span></div><br>
+            <div><span class="box">Receiver Account:</span> <span class="highlight">87697554532</span></div><br>
+            <div><span class="box">Method:</span> <span class="highlight">ATM</span></div><br>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="component" id="component3">
+        <div class="info">
+            <div><span class="box">Amount:</span> <span class="highlight">$2600.77</span></div><br>
+            <div><span class="box">Currency:</span> <span class="highlight">USD</span></div> <br>
+            <div><span class="box">Type:</span> <span class="highlight">withdrawal</span></div><br>
+            <div><span class="box">Status:</span> completed<span class="highlight">completed</span></div><br>
+            <div><span class="box">Date occurred:</span>  <span class="highlight">2023-9-12</span></div><br>
+            <div><span class="box">Associated fees:</span> <span class="highlight">$2.00</span></div><br>
+            <div><span class="box">Region:</span> <span class="highlight">Internal</span></div><br>
+            <div><span class="box">In future dated:</span> <span class="highlight">No</span></div><br>
+            <div><span class="box">Sender Account:</span> <span class="highlight">876654238764</span></div><br>
+            <div><span class="box">Receiver Account:</span> <span class="highlight">8766532143232</span></div><br>
+            <div><span class="box">Method:</span> <span class="highlight">3rd-party-App</span></div><br>
+          </div>
+    </div>
+    <div class="component" id="component4">
+        <div class="info">
+            <div><span class="box">Amount:</span> <span class="highlight">$700.00</span></div><br>
+            <div><span class="box">Currency:</span> <span class="highlight">USD</span></div> <br>
+            <div><span class="box">Type:</span> <span class="highlight">withdrawal</span></div><br>
+            <div><span class="box">Status:</span> completed<span class="highlight">completed</span></div><br>
+            <div><span class="box">Date occurred:</span>  <span class="highlight">2023-9-12</span></div><br>
+            <div><span class="box">Associated fees:</span> <span class="highlight">$2.00</span></div><br>
+            <div><span class="box">Region:</span> <span class="highlight">Internal</span></div><br>
+            <div><span class="box">In future dated:</span> <span class="highlight">No</span></div><br>
+            <div><span class="box">Sender Account:</span> <span class="highlight">876654238764</span></div><br>
+            <div><span class="box">Receiver Account:</span> <span class="highlight">8766532143232</span></div><br>
+            <div><span class="box">Method:</span> <span class="highlight">3rd-party-App</span></div><br>
+          </div>
+    </div>
+  </div>
+  

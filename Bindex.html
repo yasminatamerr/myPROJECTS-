@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back Office Banker Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://wallpapers.com/images/hd/high-resolution-blue-background-1920-x-1200-m6jsc5n5zpuxc7ev.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 1000px;
+      flex: 100%;
+    }
+    .top-bar {
+      background-color: hsl(246, 80%, 8%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: hwb(25 3% 13%);
+      font-family: Cursive;
+    }
+
+    .top-bar .login-info {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .top-bar .login-icon {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .top-bar .buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+      align-items: center;
+    }
+
+    .top-bar .date {
+      font-weight: bold;
+      color: #f8f2f2;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      position: absolute;
+      left: 47%;
+      transform: translateX(-50%);
+    }
+
+    .top-bar .buttons button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-bar .buttons button:hover {
+      background-color: #45a049;}
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      margin-top: 50px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 100px;
+      background-color: #dca163;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 0;
+      padding-top: 10px;
+    }
+
+    h2 {
+      color: #333;
+      background-color: #eaf2f2;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .functionality {
+      margin-bottom: 20px;
+    }
+
+    .functionality h2 {
+      margin-bottom: 10px;
+    }
+
+    .functionality p {
+      margin-bottom: 5px;
+    }
+
+    .functionality button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .functionality button:hover {
+      background-color: #0056b3;
+    }
+
+    .top-bar {
+      background-color: hsl(246, 80%, 8%);
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: hwb(25 3% 13%);
+      font-family: Cursive;
+    }
+
+    .top-bar .login-info {
+      font-size: 14px;
+      color: #fff;
+      margin-right: 10px;
+    }
+
+    .top-bar .login-icon {
+      font-size: 18px;
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .top-bar .buttons {
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+      align-items: center;
+    }
+
+    .top-bar .date {
+      font-weight: bold;
+      color: #f8f2f2;
+      display: flex;
+      flex: 1;
+      text-align: center;
+      position: absolute;
+      left: 65%;
+      transform: translateX(-50%);
+    }
+
+    .top-bar .buttons button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-bar .buttons button:hover {
+      background-color: #45a049;
+    }
+
+    .client-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .client-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .client-list li span {
+      font-weight: bold;
+    }
+
+    .client-list li button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .client-list li button:hover {
+      background-color: #0056b3;
+    }
+
+    .application-form {
+      margin-top: 20px;
+    }
+
+    .application-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .application-form input[type="text"],
+    .application-form input[type="number"],
+    .application-form input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+
+    .application-form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .application-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to CBL</h1>
+
+    <div class="functionality">
+      <h2>Open Bank Account for a Client</h2>
+      <button onclick="showClientList()">Open Account</button>
+    </div>  
+    <div class="functionality">
+        <h2>Close Bank Account for a Client</h2>
+        <button onclick="window.location.href = 'CloseAccount.html'">Close Account</button>
+      </div>
+
+      <div class="functionality">
+      <h2>Accept Credit Requests</h2>
+      <button onclick="window.location.href = 'checkcreditcards.html'">check credit card requests</button>
+    </div>
+
+    <div class="functionality">
+      <h2>Review Client Activities</h2>
+      <button onclick="window.location.href = 'clientactivities.html'">Show clients activities</button>
+    </div>
+
+    <div class="functionality">
+      <h2>Accept/Deny Loan Requests</h2>
+      <button onclick="window.location.href = 'aceptdenyloanrequests.html'">Accept/Deny loan requests</button>
+    </div>
+
+
+    <div class="top-bar">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bank_of_England_logo.svg/1200px-Bank_of_England_logo.svg.png" alt="Bank Icon" height="30" width="30">
+        <span>CBL</span>
+      </div>
+      <div class="buttons">
+        <div class="login-info">
+          <span class="login-icon">👤</span>
+          <span>Nariman ismail</span>
+        </div>
+         
+        <button onclick="window.location.href = 'Bindex.html'">back</button>
+        <button>Logout</button>
+      </div>
+      <div class="date">
+        <script>
+          var today = new Date();
+          var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+          document.write(date);
+        </script>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="clientList" style="display: none;">
+      <h2>List of Clients</h2>
+      <ul class="client-list">
+        <li>
+          <span>ahmed mahmoud el sawy           id: 15354744942</span>
+          <button onclick="openAccount('Client 1')">Open Account</button>
+        </li>
+        <li>
+          <span>marwanmahmoud el sawy           id: 15354744942</span>
+          <button onclick="openAccount('Client 2')">Open Account</button>
+        </li>
+        <li>
+          <span>essam ahmed mohamed           id: 15354744942</span>
+          <button onclick="openAccount('Client 3')">Open Account</button>
+        </li>
+        <li>
+          <span>layla thamer elgamily          id: 15354744942</span>
+          <button onclick="openAccount('Client 4')">Open Account</button>
+        </li>
+        <li>
+          <span>lara ahmed samaha          id: 15354744942</span>
+          <button onclick="openAccount('Client 5')">Open Account</button>
+        </li>
+        <li>
+          <span>yasmina tamer antar           id: 15354744942</span>
+          <button onclick="openAccount('Client 6')">Open Account</button>
+        </li>
+        <li>
+          <span>nariman ismail ahmed           id: 15354744942</span>
+          <button onclick="openAccount('Client 7')">Open Account</button>
+        </li>
+        <li>
+          <span>sohayla kamal ahmed          id: 15354744942</span>
+          <button onclick="openAccount('Client 8')">Open Account</button>
+        </li>
+        <li>
+          <span>kenzy elziny                 id: 15354744942</span>
+          <button onclick="openAccount('Client 9')">Open Account</button>
+        </li>
+        <li>
+          <span>yasmine tamer            id: 15354744942</span>
+          <button onclick="openAccount('Client 10')">Open Account</button>
+        </li>
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="application-form">
+        <h2>Application Form</h2>
+        <label for="name">Client Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" required>
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <button onclick="submitApplication()">Submit</button>
+         
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showClientList() {
+      var clientList = document.getElementById("clientList");
+      clientList.style.display = "block";
+    }
+
+    function openAccount(clientName) {
+      var applicationForm = document.getElementsByClassName("application-form")[0];
+      var nameField = document.getElementById("name");
+      nameField.value = clientName;
+
+      
+      applicationForm.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function submitApplication() {
+  var name = document.getElementById("name").value;
+  var age = document.getElementById("age").value;
+  var gender = document.getElementById("gender").value;
+  var amount = document.getElementById("amount").value;
+  var id = document.getElementById("id").value;
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+   
+  if (name === '' || age === '' || gender === '' || amount === '' || id === '' || username === '' || password === '') {
+  
+    var errorMessage = document.createElement("p");
+    errorMessage.textContent = "Please fill in all the fields.";
+    errorMessage.style.color = "red";
+    document.body.appendChild(errorMessage);
+    return;  
+    
+  }
+
+   
+   
+  var successMessage = document.createElement("p");
+  successMessage.textContent = "Account successfully created!";
+  successMessage.style.color = "green";
+  document.body.appendChild(successMessage);
+   
+  document.getElementById("application-form").reset();
+  window.scrollTo(0, 0);
+   
+   
+}
+
+
+ 
+
+
+</script>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="top-bar">
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Bank_of_England_logo.svg/1200px-Bank_of_England_logo.svg.png" alt="Bank Icon" height="30" width="30">
+      <span>CBL</span>
+    </div>
+    <div class="buttons">
+      <div class="login-info">
+        <span class="login-icon">👤</span>
+        <span>Nariman ismail</span>
+      </div>
+       
+      <button onclick="window.location.href = 'Bindex.html'">back</button>
+      <button onclick="window.location.href = 'index.html'">Logout</button>
+    </div>
+    <div class="date">
+      <script>
+        var today = new Date();
+        var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+        document.write(date);
+      </script>
+    </div>
+  </div>
+
+
+
+
+     
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </script>
+    </div>
+  </div>
+</body>
+</html>

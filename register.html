@@ -1,0 +1,201 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+
+    <div class="container">
+        <h2>Registration</h2>
+        <form>
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" placeholder="Enter your first name">
+          </div>
+          <div class="form-group">
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" placeholder="Enter your middle name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" placeholder="Enter your last name">
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address">
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="button" class="save-button" onclick="validateForm()">Save</button>
+          <button type="button" class="back-button" onclick="location.href='index.html'">Back</button>
+      </form>
+      <script>
+
+
+        function validateForm() {
+            var firstName = document.getElementById('firstName').value;
+            var middleName = document.getElementById('middleName').value;
+            var lastName = document.getElementById('lastName').value;
+            var dob = document.getElementById('dob').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var email = document.getElementById('email').value;
+      
+        
+            if (firstName === '' || middleName === '' || lastName === '' || dob === '' ||
+                password === '' || confirmPassword === '' || email === '') {
+                alert('Please fill in all fields.');
+            } else {
+               
+                window.location.href = 'homepage.html';
+            }
+        }
+      </script>
+        </form>
+      </div>
+
+
+
+
+
+
+       
+      
+
+       
+<style>
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  background-color: hwb(199 62% 8%);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.save-button,
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.save-button:hover,
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  background-image: url("https://media.istockphoto.com/id/1334591614/photo/man-using-digital-tablet-online-connect-to-internet-banking-currency-exchange-online-shopping.jpg?b=1&s=170667a&w=0&k=20&c=uVgjqk6ZUldPjFOUX35vNMUzJZ6tz_IDV7apr1AWhII=");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+ 
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+  <script>
+    function validateForm() {
+        var firstName = document.getElementById('firstName').value;
+        var middleName = document.getElementById('middleName').value;
+        var lastName = document.getElementById('lastName').value;
+        var dob = document.getElementById('dob').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+        var email = document.getElementById('email').value;
+  
+    
+        if (firstName === '' || middleName === '' || lastName === '' || dob === '' ||
+            password === '' || confirmPassword === '' || email === '') {
+            alert('Please fill in all fields.');
+        } else {
+           
+            window.location.href = 'homepage.html';
+        }
+    }
+  </script>
+</body>
+</html>

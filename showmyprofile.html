@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bank Account</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://wall2mob.com/m/wp-WallpapersLoveThemesDarkBlueAbstractGalaxySXOtherP_33714-cprw.jpg?i=33714&w=1440&h=1440&fdl=0');  
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .chart-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #061e39;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bank Account</h1>
+
+        <div class="chart-container">
+            <canvas id="balanceChart"></canvas>
+        </div>
+
+        <h2>Account Summary</h2>
+
+        <ul>
+            <li id="currentBalance">Current Balance: $500</li>
+            <li>Loans: $0.00</li>
+            <li>Credit Card Balance: $0.00</li>
+            <li>Savings & Deposits: $0.00</li>
+            <li>Redeem Points: 700 points</li>
+            <li>Mutual Funds: $0.00</li>
+            <li>Certificates/Deposits: $1,200.00</li>
+        </ul>
+
+        <div class="button-container">
+            <button onclick="redeemPoints()">Redeem Points</button>
+            <button onclick="window.location.href = 'homepage.html'">Back</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
+    <script>
+        
+        const initialBalance = 500;
+        const data = {
+            labels: ['Current Balance', 'Mutual Funds', 'Certificates/Deposits'],
+            datasets: [{
+                data: [initialBalance, 0, 1200],
+                backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56']
+            }]
+        };
+
+       
+        const options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'bottom',
+                labels: {
+                    boxWidth: 12
+                }
+            }
+        };
+
+        // Create the chart
+        const ctx = document.getElementById('balanceChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: options
+        });
+
+        
+        function redeemPoints() {
+            const newBalance = 1200;
+            chart.data.datasets[0].data[0] = newBalance;
+            chart.update();
+
+            
+            const currentBalanceElement = document.getElementById('currentBalance');
+            currentBalanceElement.innerText = `Current Balance: $${newBalance}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px blue;
+        }
+        .cat-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .wanttogo {
+            position: fixed;
+            left: 80px;
+            top: 370px;
+        }
+        .fullbtn{
+            width: -webkit-fill-available;
+        }
+        .search-res{
+            display: none;
+            margin-top: 45px;
+        }
+        .search-normal{
+            display: flex;
+        }
+        .logout-res{
+            display: none;
+        }
+        img{
+            height: 300px;
+            width: auto;
+            border-radius: 5px;
+        }
+        @media only screen and (max-width: 768px) {
+            .container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .cat-container{
+                margin-bottom: 10px;
+            }
+            .search-res{
+                display: block;
+            }
+            .search-normal{
+                display: none;
+            }
+            .logout-res{
+                display: block;
+                position: fixed;
+                top: 9px;
+                right: 7px;
+                z-index: 2000;
+            }
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <button onclick="location.href = '/logout';" id="logout" class="btn btn-danger ml-3 logout-res">Logout</button>
+
+    <nav class="navbar fixed-top navbar-light justify-content-between" style="background-color: #404243 ;">
+        
+        <a class="navbar-brand text-white">Cities</a>
+        <div class="search-normal">
+            <form class="form-inline" method="POST" action='/search'>
+            <input name="Search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            </form>
+            <button onclick="location.href = '/logout';" id="logout" class="btn btn-danger ml-3">Logout</button>
+
+        </div>    
+      </nav>
+      
+    <br>
+
+    <div class="container search-res">
+        <form class="form-inline" method="POST" action='/search'>
+            <input name="Search" class="form-control col-md-9" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 col-md-3" type="submit">Search</button>
+
+        </form>
+    </div>
+    <br>
+    <br>
+    
+    <div class="container d-flex">
+        
+        <br>
+        <div class="mx-auto col-md-6 mb-3 cat-container">
+        <img id="image" src="/bali.png" width="100" height="100">
+        <br>
+        <label class="ml-4 my-2">Bali Island</label>
+        <br>
+        <button onclick="location.href = '/bali';" class="fullbtn btn btn-primary"> View </button>
+    </div>
+    <br>
+    
+    
+    <div class="mx-auto col-md-6 mb-3 cat-container">
+        <img id="image" src="/santorini.png" width="100" height="100">
+        <br>
+        <label class="ml-4 my-2">Santorini Island</label>
+        <br>
+        <button onclick="location.href = '/santorini';"  class="fullbtn btn btn-primary"> View </button>
+    </div>
+    <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+<footer class="bg-dark text-center text-white">
+    <div class="container p-4">
+      
+      <section class="mb-4">
+        <h3>
+          Developed by a group of talented Software Engineers at the German University in Cairo
+        </h3>
+      </section>
+      <br>
+      <br>
+      <br>
+      <section class="">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h2>Arwa Gad</h5>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">Full Stack Software Engineer</a>
+              </li>
+              <li>
+                <a href="#!">arwa.gad@student.guc.edu.eg</a>
+              </li>
+            </ul>
+          </div>
+          <br>
+          <br>
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h2>Ebram Fadl</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" class="text-white">Full Stack Software Engineer</a>
+                  </li>
+                  <li>
+                    <a href="#!">ebram@ntsal.com</a>
+                  </li>
+                </ul>
+          </div>
+          <br>
+          <br>
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h2>Yasmina Tamer</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" class="text-white">Back End Software Engineer</a>
+                  </li>
+                  <li>
+                    <a href="#!">yasmina.antar@student.guc.edu.eg</a>
+                  </li>
+                </ul>
+          </div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+          
+
+          
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h2>Jana Abubakr</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" class="text-white">Back End Software Engineer</a>
+                  </li>
+                  <li>
+                    <a href="#!">jana.elmawla@student.guc.edu.eg</a>
+                  </li>
+                </ul>
+          </div>
+          <br>
+          <br>
+
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h2>Nariman Ismail</h5>
+                <ul class="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" class="text-white">Back End Software Engineer</a>
+                  </li>
+                  <li>
+                    <a href="#!">nariman.noureldeen@student.guc.edu.eg</a>
+                  </li>
+                </ul>
+          </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://www.guc.edu.eg/">www.guc.edu.eg</a>
+    </div>
+  </footer>
+    
+</body>
+</html>
+
+
+
