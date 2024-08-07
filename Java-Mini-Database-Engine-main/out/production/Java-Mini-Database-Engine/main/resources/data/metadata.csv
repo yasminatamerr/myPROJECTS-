@@ -1,0 +1,15 @@
+courses,hours,java.lang.Integer,False,coursesxdate_addedxcourse_idxhours,Octree,1,24
+courses,date_added,java.util.Date,True,coursesxdate_addedxcourse_idxhours,Octree,1901-01-01,2020-12-31
+courses,course_id,java.lang.String,False,coursesxdate_addedxcourse_idxhours,Octree,0000,9999
+courses,course_name,java.lang.String,False,null,null,AAAAAA,zzzzzz
+pcs,pc_id,java.lang.Integer,True,null,null,0,20000
+pcs,student_id,java.lang.String,False,null,null,43-0000,99-9999
+transcripts,gpa,java.lang.Double,True,null,null,0.7,5.0
+transcripts,date_passed,java.util.Date,False,null,null,1990-01-01,2020-12-31
+transcripts,course_name,java.lang.String,False,null,null,AAAAAA,zzzzzz
+transcripts,student_id,java.lang.String,False,null,null,43-0000,99-9999
+students,gpa,java.lang.Double,False,null,null,0.7,5.0
+students,last_name,java.lang.String,False,null,null,AAAAAA,zzzzzz
+students,first_name,java.lang.String,False,null,null,AAAAAA,zzzzzz
+students,dob,java.util.Date,False,null,null,1990-01-01,2000-12-31
+students,id,java.lang.String,True,null,null,43-0000,99-9999
