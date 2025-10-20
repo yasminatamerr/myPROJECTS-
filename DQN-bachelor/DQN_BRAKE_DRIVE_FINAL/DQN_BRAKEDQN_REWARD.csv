@@ -1,0 +1,6 @@
+﻿Term,Condition,Reward/Penalty,Purpose
+1,v < 10 \cdot d_{\text{obs}} + 10,3[a = 0] - [a = 1],Encourage braking when close to obstacles.
+2,v > 10 \cdot d_{\text{obs}} + 10,2[a = 1] - 1,Encourage maintaining speed when far from obstacles.
+3,v < 1 \wedge d_{\text{obs}} > 100,-10,Penalize unnecessary braking.
+4,v = 0 \wedge d_{\text{obs}} < 150,+200,Reward stopping safely near obstacles.
+5,collisions > 0,-200,Penalize collisions severely.

@@ -1,0 +1,13 @@
+﻿Network,Inputs,Outputs
+Driving NN,- `phi`: Orientation difference between the vehicle and the road (in degrees).,- Steering Angle: Continuous value indicating steering direction.
+,- `signed_dis`: Signed distance from the centerline of the road (positive or negative).,- -1: Full left turn.
+,- Vehicle Speed (`kmh`): Current speed of the vehicle.,- 0: Go straight.
+,- Proximity to Waypoints: Distance to the next waypoint on the road.,- +1: Full right turn.
+,- Other Features: Additional state information (e.g., curvature of the road).,- Throttle Level: Continuous value indicating throttle intensity.
+,,- 0: No throttle.
+,,- 1: Full throttle.
+Brake NN,- Distance to Obstacles: Distance to nearby vehicles, pedestrians, or other obstacles.,- Braking Intensity: Continuous value indicating braking force.
+,- Vehicle Speed (`kmh`): Current speed of the vehicle.,- 0: No braking.
+,- Proximity to Stopping Points: Distance to traffic lights, stop signs, or intersections.,- 1: Full braking.
+,- Obstacle Velocity: Relative velocity of nearby obstacles (if available).,
+,- Road Conditions: Information about road friction, weather, etc. (optional).,

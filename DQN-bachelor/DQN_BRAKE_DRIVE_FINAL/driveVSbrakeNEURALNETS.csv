@@ -1,0 +1,20 @@
+﻿Aspect,Driving NN,Brake NN,How They Work Together
+Focus,Navigation, alignment, and progress toward the goal.,Safety, collision avoidance, and stopping.,Balance efficient navigation with safety by coordinating steering, throttle, and braking.
+Inputs,- `phi`: Orientation difference between the vehicle and the road (in degrees).,- Distance to Obstacles: Distance to nearby vehicles, pedestrians, or other obstacles.,Shared inputs like speed (kmh) are used by both networks for coordination.
+,- `signed_dis`: Signed distance from the centerline of the road (positive or negative).,- Vehicle Speed (`kmh`): Current speed of the vehicle.,Each network focuses on its specialized inputs (e.g., phi for Driving NN, obstacle distance for Brake NN).
+,- Vehicle Speed (`kmh`): Current speed of the vehicle.,- Proximity to Stopping Points: Distance to traffic lights, stop signs, or intersections.,
+,- Proximity to Waypoints: Distance to the next waypoint on the road.,- Obstacle Velocity: Relative velocity of nearby obstacles (if available).,
+,- Other Features: Additional state information (e.g., curvature of the road).,- Road Conditions: Information about road friction, weather, etc. (optional).,
+Outputs,- Steering Angle: Continuous value indicating steering direction.,- Braking Intensity: Continuous value indicating braking force.,Combined outputs determine the final vehicle control commands (steering, throttle, braking).
+,- -1: Full left turn.,- 0: No braking.,Example: If both suggest conflicting actions, prioritize safety (e.g., braking overrides acceleration).
+,- 0: Go straight.,- 1: Full braking.,
+,- +1: Full right turn.,,
+,- Throttle Level: Continuous value indicating throttle intensity.,,
+,- 0: No throttle.,,
+,- 1: Full throttle.,,
+Reward Design,Rewards staying aligned, maintaining speed, and progressing toward the goal.,Penalizes collisions, unsafe behavior, and rewards smooth braking.,Rewards are balanced to encourage efficient navigation while ensuring safety.
+Priority,Performance-oriented (e.g., efficient navigation).,Safety-oriented (e.g., preventing accidents).,Prioritize safety in conflicting scenarios (e.g., braking overrides throttle).
+Example Scenarios,- Vehicle is on a straight road: Steer straight (0), apply moderate throttle (0.5).,- Vehicle detects an obstacle ahead: Full braking (1).,- Vehicle is on a straight road: Continue driving forward safely.
+,- Vehicle approaches a sharp curve: Steer slightly left (-0.3), reduce throttle (0.2).,- Vehicle approaches a stop sign: Gradual braking (0.7).,- Vehicle approaches a sharp curve: Slow down and adjust steering to navigate the curve.
+,,,- Vehicle detects an obstacle ahead: Stop the vehicle to avoid a collision.
+,,,- Vehicle approaches a stop sign: Slow down and come to a complete stop.
